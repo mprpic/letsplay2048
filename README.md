@@ -114,10 +114,6 @@ Nothing in a game is left to chance after the fact: any board in it can be rebui
 
 ## Caveats
 
-- **The moves are always offered in the same order**, and the order can matter. In its first 100
-  games, jev-1.14 picked whichever move was listed second about half the time. That is usually
-  "right", but when "up" was not possible and "down" moved into second place, it picked "down" 84%
-  of the time.
 - **Games are not seeded**, so each model plays different boards. Over 1,000 games that averages
   out, but it makes any one game a poor comparison.
 - **The Decisions API is in alpha.** The request sets no sampling parameters, so each model runs at
