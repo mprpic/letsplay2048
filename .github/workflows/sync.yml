@@ -1,0 +1,28 @@
+name: Sync games
+
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - name: Copy new games and update the results
+        run: |
+          message=$(python3 scripts/sync.py)
+          [ -n "$message" ] || exit 0
+          git add v1 README.md
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "$message"
+          git push
