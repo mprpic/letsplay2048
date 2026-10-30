@@ -55,13 +55,14 @@ MODELS = (
     "microsoft/microsoft-decision-1",
     "typesafe/jev-1.13",
     "typesafe/jev-1.14",
-    "perplexity/pplx-decider-v1.1-27b",
     "nace-ai/drex-v1.5",
     "nace-ai/drex-v2.0",
     "cloudflare/clef",
     "cloudflare/clef-flash",
     "togethercomputer/tev1-4b-experimental",
     "jaredpalmer/kev-4b",
+    # Last while OpenRouter has no endpoint serving it.
+    "perplexity/pplx-decider-v1.1-27b",
 )
 GAMES_EACH = 1000
 PACE = 3.0  # seconds from the start of one move to the start of the next
