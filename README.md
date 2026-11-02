@@ -72,10 +72,10 @@ among the moves that change the board. Its totals are in [`v1/baseline.json`](v1
 | microsoft/microsoft-decision-1 | 1,000 | 2,289 | 2,102 | 8,888 | 512 | 6.1% |
 | typesafe/jev-1.13 | 1,000 | 2,572 | 2,346 | 8,312 | 512 | 8.4% |
 | typesafe/jev-1.14 | 1,000 | 790 | 692 | 2,776 | 256 | 0.0% |
-| nace-ai/drex-v1.5 | 200 | 3,098 | 2,938 | 7,380 | 512 | 16.5% |
+| nace-ai/drex-v1.5 | 319 | 3,121 | 2,844 | 11,000 | 1,024 | 16.6% |
 | Random moves | 1,000 | 1,100 | | 3,184 | | |
 
-Through game 3,200, which ended 2026-11-01.
+Through game 3,319, which ended 2026-11-02.
 <!-- results:end -->
 
 The last model listed is usually still playing its 1,000 games.
