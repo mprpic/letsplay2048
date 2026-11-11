@@ -47,22 +47,20 @@ import urllib.error
 import urllib.request
 
 API = "https://openrouter.ai/api/alpha/decisions"
-# Played in this order. The published files name a model only once it has
-# played, so the page cannot say which one comes next. A model placed ahead
-# of one that is part way through its games plays next and splits that run.
-# Each new version follows its predecessor, so the pair play days apart.
+# Played in this order, which top.json publishes as the queue. A model placed
+# ahead of one that is part way through its games plays next and splits that
+# run. Each new version follows its predecessor, so the pair play days apart.
 MODELS = (
     "microsoft/microsoft-decision-1",
     "typesafe/jev-1.13",
     "typesafe/jev-1.14",
     "nace-ai/drex-v1.5",
     "nace-ai/drex-v2.0",
+    "google/gemini-decision-1",
     "cloudflare/clef",
     "cloudflare/clef-flash",
     "togethercomputer/tev1-4b-experimental",
     "jaredpalmer/kev-4b",
-    # Last while OpenRouter has no endpoint serving it.
-    "perplexity/pplx-decider-v1.1-27b",
 )
 GAMES_EACH = 1000
 PACE = 3.0  # seconds from the start of one move to the start of the next
@@ -236,8 +234,15 @@ def write_live(game, status):
     )
 
 
+def unfinished(state):
+    """The models still owed games, in playing order."""
+    played = {model: stats["games"] for model, stats in state["models"].items()}
+    return [model for model in MODELS if played.get(model, 0) < GAMES_EACH]
+
+
 def write_top(state):
-    write_json(DATA / "top.json", {k: state[k] for k in ("all", "recent", "models", "random")})
+    top = {k: state[k] for k in ("all", "recent", "models", "random")}
+    write_json(DATA / "top.json", {**top, "queue": unfinished(state)})
 
 
 def ranked(entries):
@@ -310,8 +315,7 @@ def main():
     while True:
         game = state["game"]
         if game is None:
-            played = {model: stats["games"] for model, stats in state["models"].items()}
-            model = next((m for m in MODELS if played.get(m, 0) < GAMES_EACH), None)
+            model = next(iter(unfinished(state)), None)
             if model is None:
                 print("every model has played its share")
                 return 0

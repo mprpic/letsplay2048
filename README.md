@@ -52,11 +52,11 @@ down, left, and these ten models, each playing 1,000 games before the next one s
 3. typesafe/jev-1.14
 4. nace-ai/drex-v1.5
 5. nace-ai/drex-v2.0
-6. cloudflare/clef
-7. cloudflare/clef-flash
-8. togethercomputer/tev1-4b-experimental
-9. jaredpalmer/kev-4b
-10. perplexity/pplx-decider-v1.1-27b
+6. google/gemini-decision-1
+7. cloudflare/clef
+8. cloudflare/clef-flash
+9. togethercomputer/tev1-4b-experimental
+10. jaredpalmer/kev-4b
 
 A change to what the models are shown, or to how their games are dealt, will start `v2` in its
 own directory, so games from different setups are never mixed.
