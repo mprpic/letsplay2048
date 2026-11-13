@@ -73,10 +73,11 @@ among the moves that change the board. Its totals are in [`v1/baseline.json`](v1
 | typesafe/jev-1.13 | 1,000 | 2,572 | 2,346 | 8,312 | 512 | 8.4% |
 | typesafe/jev-1.14 | 1,000 | 790 | 692 | 2,776 | 256 | 0.0% |
 | nace-ai/drex-v1.5 | 1,000 | 3,129 | 3,024 | 12,120 | 1,024 | 15.5% |
-| nace-ai/drex-v2.0 | 953 | 978 | 836 | 4,732 | 512 | 0.1% |
+| nace-ai/drex-v2.0 | 1,000 | 984 | 844 | 4,732 | 512 | 0.1% |
+| google/gemini-decision-1 | 109 | 2,288 | 2,064 | 5,684 | 512 | 5.5% |
 | Random moves | 1,000 | 1,100 | | 3,184 | | |
 
-Through game 4,953, which ended 2026-11-12.
+Through game 5,109, which ended 2026-11-13.
 <!-- results:end -->
 
 The last model listed is usually still playing its 1,000 games.
