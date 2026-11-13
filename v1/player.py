@@ -59,6 +59,8 @@ MODELS = (
     "google/gemini-decision-1",
     "cloudflare/clef",
     "cloudflare/clef-flash",
+    "perplexity/pplx-decider-v1.2",
+    "perplexity/pplx-decider-v1.3",
     "togethercomputer/tev1-4b-experimental",
     "jaredpalmer/kev-4b",
 )

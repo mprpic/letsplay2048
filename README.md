@@ -45,7 +45,7 @@ retried until one succeeds, so an outage delays a game but never decides a move.
 ## Runs
 
 `v1` is one fixed setup: the request above, with the moves always offered in the order up, right,
-down, left, and these ten models, each playing 1,000 games before the next one starts:
+down, left, and these twelve models, each playing 1,000 games before the next one starts:
 
 1. microsoft/microsoft-decision-1
 2. typesafe/jev-1.13
@@ -55,8 +55,10 @@ down, left, and these ten models, each playing 1,000 games before the next one s
 6. google/gemini-decision-1
 7. cloudflare/clef
 8. cloudflare/clef-flash
-9. togethercomputer/tev1-4b-experimental
-10. jaredpalmer/kev-4b
+9. perplexity/pplx-decider-v1.2
+10. perplexity/pplx-decider-v1.3
+11. togethercomputer/tev1-4b-experimental
+12. jaredpalmer/kev-4b
 
 A change to what the models are shown, or to how their games are dealt, will start `v2` in its
 own directory, so games from different setups are never mixed.
